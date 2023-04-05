@@ -9,7 +9,7 @@ import Foundation
 @main
 struct PackageBuildInfoPlugin: BuildToolPlugin {
     func createBuildCommands(context: PackagePlugin.PluginContext, target: PackagePlugin.Target) async throws -> [PackagePlugin.Command] {
-        let repositoryPath = target.directory.appending("../../.git")
+        let repositoryPath = target.directory.appending("../..")
         print("--> out dir: \(context.pluginWorkDirectory)")
         return [
             .prebuildCommand(
