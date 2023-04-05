@@ -1,11 +1,15 @@
 #!/bin/bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Invalid number of parameters"
-    exit
+    echo "usage: $(basename "$0") repository_directory output_directory"
+    exit 1
 fi
 
-VERSION=$(git --git-dir "$1/.git" describe --tags)
+if ! VERSION=$(git --git-dir "$1/.git" describe --tags 2> /dev/null); then
+    echo "No tag was found in the specified repository."
+    exit 1
+fi
+
 GENERATED_FILE_PATH="$2/PackageInfo.swift"
 
 cat > "$GENERATED_FILE_PATH" <<- EOF
