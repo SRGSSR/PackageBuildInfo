@@ -6,7 +6,7 @@ enum ExecError: Error {
     case invalidArguments
 }
 
-let arguments = ProcessInfo().arguments
+let arguments = CommandLine.arguments
 guard arguments.count > 2 else {
     throw ExecError.invalidArguments
 }
