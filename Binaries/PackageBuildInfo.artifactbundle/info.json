@@ -8,11 +8,8 @@
         {
           "path": "universal/packageBuildInfo.sh",
           "supportedTriples": [
-            "x86_64-unknown-linux-gnu",
-            "arm64-unknown-linux-gnu",
             "x86_64-apple-macosx",
-            "arm64-apple-macosx",
-            "aarch64-unknown-linux-gnu"
+            "arm64-apple-macosx"
           ]
         }
       ]
