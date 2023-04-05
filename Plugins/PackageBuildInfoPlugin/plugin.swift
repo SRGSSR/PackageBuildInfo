@@ -10,6 +10,7 @@ import Foundation
 struct PackageBuildInfoPlugin: BuildToolPlugin {
     func createBuildCommands(context: PackagePlugin.PluginContext, target: PackagePlugin.Target) async throws -> [PackagePlugin.Command] {
         let repositoryPath = target.directory.appending("../../.git")
+        print("--> out dir: \(context.pluginWorkDirectory)")
         return [
             .prebuildCommand(
                 displayName: "Get version",
